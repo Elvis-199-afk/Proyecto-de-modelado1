@@ -1,0 +1,106 @@
+/* Estilos generales */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+h1 {
+    color: #0056b3;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Estilos del menú */
+.menu button { 
+    padding: 10px 15px; 
+    margin: 5px; 
+    cursor: pointer; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+.menu button:hover { 
+    background-color: #0056b3; 
+}
+
+/* Contenedores de operación y resultado */
+#operation-container, #result-container { 
+    margin-top: 20px; 
+    padding: 20px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Entradas de texto y número */
+input[type="number"], input[type="text"] { 
+    width: 100px; 
+    padding: 8px; 
+    margin-right: 10px; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="text"]#function {
+    width: 250px;
+}
+
+/* Estilos de tablas (para matrices) */
+#operation-container table { 
+    border-collapse: collapse; 
+    margin-top: 15px; 
+}
+#operation-container table input { 
+    width: 50px; 
+    text-align: center; 
+    margin: 2px;
+}
+
+/* Contenedor de I/O de sistemas de ecuaciones */
+.system-io { 
+    display: flex; 
+    gap: 30px; 
+    margin-top: 10px;
+}
+
+/* Parámetros específicos de métodos */
+.root-params { 
+    margin-bottom: 20px; 
+    border-bottom: 1px dashed #ccc; 
+    padding-bottom: 15px; 
+}
+
+/* Estilos de advertencia */
+.warning { 
+    color: #ff9800; /* Color naranja */
+    font-style: italic; 
+    font-size: 0.9em;
+}
+
+/* Salida de resultados */
+#result-output { 
+    background-color: #f4f4f4; 
+    padding: 15px; 
+    border-radius: 4px; 
+    white-space: pre; 
+    font-family: 'Courier New', monospace; 
+    font-size: 1.1em; 
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+
+/* Gráfica (Imagen) */
+#plot-image { 
+    max-width: 100%; 
+    height: auto; 
+    margin-top: 20px; 
+    border: 2px solid #333;
+    border-radius: 4px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelado Numérico - Calculadora Numérica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Modelado Numérico: Álgebra Lineal y Raíces</h1>
+
+    <div class="menu">
+        <button onclick="showMatrixSetup('sum')">1. SUMA</button>
+        <button onclick="showMatrixSetup('multiply')">2. MULTIPLICACIÓN</button>
+        <button onclick="showMatrixSetup('inverse')">3. INVERSA</button>
+        <button onclick="showMatrixSetup('determinant')">4. DETERMINANTE</button>
+        
+        <button onclick="showSystemSetup('gauss_elimination')">5. GAUSS</button>
+        <button onclick="showSystemSetup('gauss_jordan')">6. GAUSS-JORDAN</button>
+        <button onclick="showSystemSetup('jacobi')">7. JACOBI</button>
+        <button onclick="showSystemSetup('gauss_seidel')">8. GAUSS-SEIDEL</button>
+        
+        <button onclick="showRootSetup('bisection')">9. BISECCIÓN (1D)</button>
+        <button onclick="showRootSetup('secant')">10. SECANTE (1D)</button> 
+        <button onclick="showRootSetup('fixed_point')">11. PUNTO FIJO (Sistema)</button>
+        <button onclick="showRootSetup('newton_raphson')">12. NEWTON-RAPHSON (Sistema)</button> 
+        <button onclick="showRootSetup('modified_newton')">13. NEWTON MODIFICADO (Jacobiano Congelado)</button>
+    </div>
+
+    <div id="operation-container">
+        <p>Selecciona una operación del menú superior para empezar.</p>
+    </div>
+
+    <div id="result-container">
+        <h2>Resultado:</h2>
+        <pre id="result-output"></pre>
+        <img id="plot-image" src="" alt="Gráfica del sistema de funciones F(x)=0" style="display: none;">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
