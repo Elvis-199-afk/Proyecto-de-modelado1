@@ -7,6 +7,11 @@ on:
       - main
     types: [closed]
 
+
+
+
+
+
 jobs:
   obtener-fechas:
     # Solo corre si el Pull Request fue aceptado (merged), no si fue rechazado
