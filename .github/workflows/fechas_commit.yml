@@ -1,0 +1,42 @@
+name: Rastrear Fechas de Commit y Aceptación
+
+# El script se ejecuta SOLO cuando se cierra un Pull Request en la rama principal
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  obtener-fechas:
+    # Solo corre si el Pull Request fue aceptado (merged), no si fue rechazado
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener información del Commit y la Fusión
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // 1. Obtener el momento de aceptación (Merge)
+            const momentoAceptado = festivalContext = github.event.pull_request.merged_at;
+            
+            // 2. Obtener los datos del último commit enviado en ese Pull Request
+            const commitSha = github.event.pull_request.head.sha;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            
+            const commitInfo = await github.rest.repos.getCommit({
+              owner: repoOwner,
+              repo: repoName,
+              ref: commitSha
+            });
+            
+            // 3. Obtener el momento de creación del commit
+            const momentoCommit = commitInfo.data.commit.author.date;
+            
+            // 4. Mostrar los resultados en la pantalla de GitHub Actions
+            console.log("=========================================");
+            console.log(`📌 ID del Commit: ${commitSha}`);
+            console.log(`📅 El commit se REALIZÓ el: ${momentoCommit}`);
+            console.log(`✅ El commit se ACEPTÓ el: ${momentoAceptado}`);
+            console.log("=========================================");
